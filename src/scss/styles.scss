@@ -1,0 +1,60 @@
+@import "_mixins";
+@import "reset.css";
+
+$colorRed: #e7463c;
+$colorIvory: #f0f0f0;
+$colorGray: #999;
+
+body {
+  display: flex;
+  background-color: $colorIvory;
+}
+
+header {
+  width: 33vw;
+  color: $colorRed;
+
+  div.contents_box {
+    padding: 72px;
+  }
+
+  h1 {
+    font-size: 72px;
+    padding: 58px 72px 0 72px;
+  }
+  p {
+    &:nth-child(1) {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+    &:nth-child(2) {
+      font-size: 15px;
+    }
+  }
+}
+
+nav {
+  width: auto;
+  margin-top: 27px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      margin: 0 12.5px 5px 0;
+      text-decoration: underline;
+      a {
+        color: $colorGray;
+      }
+    }
+  }
+  p {
+    color: $colorGray;
+    margin-top: 20px;
+    font-size: 10px;
+  }
+}
+
+main {
+  background-color: $colorRed;
+  width: 67vw;
+}

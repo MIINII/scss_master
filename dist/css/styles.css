@@ -1,0 +1,47 @@
+@import url(reset.css);
+body {
+  display: flex;
+  background-color: #f0f0f0;
+}
+header {
+  width: 33vw;
+  color: #e7463c;
+}
+header div.contents_box {
+  padding: 72px;
+}
+header h1 {
+  font-size: 72px;
+  padding: 58px 72px 0;
+}
+header p:nth-child(1) {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+header p:nth-child(2) {
+  font-size: 15px;
+}
+nav {
+  width: auto;
+  margin-top: 27px;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav ul li {
+  margin: 0 12.5px 5px 0;
+  text-decoration: underline;
+}
+nav p,
+nav ul li a {
+  color: #999;
+}
+nav p {
+  margin-top: 20px;
+  font-size: 10px;
+}
+main {
+  background-color: #e7463c;
+  width: 67vw;
+}

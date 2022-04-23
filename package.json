@@ -1,0 +1,46 @@
+{
+  "name": "scss-masterclass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nomadcoders/scss-masterclass.git"
+  },
+  "author": "Nicolás Serrano Arévalo <itnico.las.me@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "del": "^4.1.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-csso": "^3.0.1"
+  },
+  "scripts": {
+    "dev": "gulp dev",
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-fonts.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+  },
+  "browserslist": {
+    "browsers": [
+      "last 2 versions"
+    ]
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "gulpp": "^1.0.0",
+    "node-sass": "^7.0.1"
+  },
+  "description": "(S)CSS Layout Masterclass: Flexbox & Grid",
+  "bugs": {
+    "url": "https://github.com/nomadcoders/scss-masterclass/issues"
+  },
+  "homepage": "https://github.com/nomadcoders/scss-masterclass#readme"
+}
