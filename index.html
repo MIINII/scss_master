@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/css/reset.css" />
     <link rel="stylesheet" href="dist/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/72011d1401.js"
+      crossorigin="anonymous"
+    ></script>
     <title>(S)CSS Masterclass</title>
   </head>
   <body>
@@ -47,24 +51,70 @@
     </header>
 
     <main>
+      <div class="movie_intro_sorting">
+        <span
+          >Currently viewing <button>2000s</button> sorted by
+          <button>random</button></span
+        >
+      </div>
+
       <div class="movie_intro">
         <div class="movie_intro_summary">
-          <h2>Goodnight Mommy(2014)</h2>
-          <span>Directed by Severin Fiala, Veronika Franz</span>
+          <h2><span>#</span>Orphan (2009)</h2>
+          <span>Directed by Jaume Collet-Serra</span>
         </div>
         <div class="movie_intro_thumbnail">
           <div class="movie_intro_ranking">
-            <span>#58</span>
+            <span>#103</span>
+            <div class="movie_intro_vote">
+              <button class="intro_vote_up">
+                <i class="fa-solid fa-arrow-up"></i>
+              </button>
+              <button class="intro_vote_result">35</button>
+              <button class="intro_vote_down">
+                <i class="fa-solid fa-arrow-down"></i>
+              </button>
+            </div>
           </div>
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/DzSsE5t7JNk"
+            src="https://www.youtube.com/embed/m5BSLNAKIZs?start=22"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
+        </div>
+        <div class="movie_intro_desc">
+          <p>
+            Orphan is a little too slick for its own good. It looks and feels
+            stylistically like so many other films, which in turn made it
+            difficult for me to really recall anything specific about the film
+            other than the final act. I did remember that I was surprised at how
+            much I liked it, so I gave it a re-watch. It is much better than you
+            might expect it to be. Isabelle Fuhrman, who plays the titular
+            orphan, is phenomenal and really makes the film work. Vera Farmiga
+            is great but I grew very tired of the frequent weeping sessions,
+            which she tends to lean on a bit too much. Peter Sarsgaard is
+            creepy, and not in a good way. More in the completely
+            two-dimensional male ego way. There is a sort of weak backstory for
+            the family that’s entirely unnecessary, not really used, and barely
+            even touched on. I wouldn’t consider this my first choice if I were
+            digging through the archives looking for something to watch, but it
+            isn’t half bad for a back-up plan. If it wasn’t for Isabelle
+            Fuhrman’s performance, I’d pass this one over completely.
+          </p>
+          <span class="intro_desc_reviewer">-B</span>
+          <span class="intro_desc_rating">My rating:6/10</span>
+        </div>
+        <div class="movie_intro_comments">
+          <span class="comments_now">No Comments</span>
+          <span class="comments_write"
+            ><a href="#"
+              ><i class="fa-duotone fa-comment">Leave a Comments</i></a
+            ></span
+          >
         </div>
       </div>
     </main>

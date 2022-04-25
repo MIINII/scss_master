@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;900&display=swap");
 @import "_mixins";
-@import "reset.css";
+@import "_reset";
 
 $colorRed: #e7463c;
 $colorIvory: #f0f0f0;
@@ -75,4 +75,44 @@ header {
 main {
   background-color: $colorRed;
   width: 67vw;
+
+  .movie_intro_sorting {
+    width: auto;
+    padding: 60px 72px;
+    text-align: center;
+    display: fixed;
+
+    span {
+      color: #fff;
+      font-size: 20px;
+      button {
+        font-size: 20px;
+        text-decoration: underline;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        border: none;
+        color: #76150f;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .movie_intro {
+    padding: 72px;
+
+    .movie_intro_summary {
+      h2 {
+        @include subTitle();
+        & > span {
+          visibility: hidden;
+        }
+        & > span:hover {
+          visibility: visible;
+        }
+        }
+      }
+    }
+  }
 }
