@@ -2,7 +2,9 @@
 @import "_mixins";
 @import "_reset";
 
+$colorCrimson: #c82419;
 $colorRed: #e7463c;
+$colorBrown: #76150f;
 $colorIvory: #f0f0f0;
 $colorGray: rgba(0, 0, 0, 0.5);
 
@@ -18,8 +20,10 @@ body {
 
 header {
   display: block;
+  position: fixed;
   font-family: "Montserrat", sans-serif;
   width: 33vw;
+  height: 100%;
   color: $colorRed;
 
   h1 {
@@ -73,14 +77,20 @@ header {
 }
 
 main {
-  background-color: $colorRed;
+  position: relative;
+  left: 33vw;
   width: 67vw;
+  height: auto;
 
   .movie_intro_sorting {
-    width: auto;
+    position: fixed;
+    left: 33vw;
+    width: inherit;
     padding: 60px 72px;
+    z-index: 10000;
+    background-color: $colorRed;
     text-align: center;
-    display: fixed;
+    border-bottom: 0.1px solid #76150f;
 
     span {
       color: #fff;
@@ -100,18 +110,111 @@ main {
   }
 
   .movie_intro {
-    padding: 72px;
+    background-color: $colorRed;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.08), transparent);
+    position: relative;
+    top: 10vh;
+    width: 100%;
+    padding: calc(10vh + 0.9em) 144px 98px;
 
     .movie_intro_summary {
+      display: flex;
+      position: relative;
+      z-index: 1000;
+      justify-content: space-between;
+      align-items: flex-end;
       h2 {
         @include subTitle();
-        & > span {
-          visibility: hidden;
+        position: relative;
+        & > a {
+          left: -50px;
+          position: absolute;
+          color: $colorBrown;
+          text-decoration: none;
         }
-        & > span:hover {
-          visibility: visible;
+        & + a:hover {
+          opacity: 0.6;
+          transition-duration: 0ms;
         }
+      }
+      span {
+        color: #fff;
+        font-weight: 700;
+      }
+    }
+
+    .movie_intro_thumbnail {
+      width: inherit;
+
+      .movie_intro_ranking {
+        span {
+          position: relative;
+          z-index: 1000;
+          bottom: -96px;
+          left: -10px;
+          background-color: $colorCrimson;
+          color: #fff;
+          font-size: 25px;
+          padding: 0.4em 0.5em 0.45em;
         }
+
+        .movie_intro_vote {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          position: absolute;
+          top: 280px;
+          right: 98px;
+          & > button {
+            cursor: pointer;
+            right: 100px;
+            width: 45px;
+            appearance: none;
+            background-color: $colorCrimson;
+            color: #fff;
+            border: none;
+            padding: 10px;
+          }
+
+          .intro_vote_up:not([disabled]):first-of-type:after {
+            content: "Vote up";
+          }
+          .intro_vote_up:after {
+            align-items: center;
+            background-color: #da281b;
+            bottom: 0;
+            color: #fff;
+            display: flex;
+            font-size: 0.7em;
+            opacity: 0;
+            padding: 10px;
+            pointer-events: none;
+            position: absolute;
+            right: 100%;
+            top: 0;
+            transform: translate3d(12px, 0, 0);
+            transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      .movie_intro_thumbnail_img > img {
+        width: 100%;
+        z-index: 0;
+        margin-top: 36px;
+        box-shadow: 12px 12px 10px 1px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .movie_intro_desc {
+      p {
+        color: #fff;
+        text-align: justify;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+        padding-top: 48px;
       }
     }
   }
